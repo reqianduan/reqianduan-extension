@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name":    "热前端文章采集工具",
+    "version": "1.0.0",
+    "description": "这个扩展程序可以让你方便地从任意网站上采集喜欢的文章到热前端(reqianduan.com)网站。这是热前端官方(reqianduan.com)提供的扩展。",
+    "icons": {
+        "128": "img/icon-128.png",
+        "16": "img/icon-16.png",
+        "48": "img/icon-48.png"
+    },
+
+    "background": {
+        "page": "background.html"
+    },
+
+    "content_scripts": [{
+        "matches":    ["*://*/*"],
+        "js":         ["js/jquery.min.js"]
+    }],
+
+    "browser_action": {
+        "default_title": "访问热前端",
+        "default_icon": {
+            "19": "img/icon-19.png",
+            "38": "img/icon-38.png"
+        }
+    },
+
+    "permissions": [ "background", "tabs", "contextMenus", "http://*/*", "https://*/*" ]
+
+}

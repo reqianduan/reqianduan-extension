@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>将文章采集到热前端</title>
+    <link rel="stylesheet" href="css/typo.min.css">
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+<body>
+    <header class="header">
+        <div class="toolbar"></div>
+        <div class="toolbar right">
+            <ul>
+                <li id="btn_save" class="separate">
+                    <div class="btn btn-save">
+                        <i></i>
+                        保存到本地
+                    </div>
+                </li>
+                <li id="btn_upload" class="separate">
+                    <div class="btn btn-pin">
+                        <i></i>
+                        采集到热前端
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a id="btn_close">×</a>
+        <div class="clear"></div>
+    </header>
+
+    <div class="half typo">
+        <textarea id="source" class="scrollbar"></textarea>
+    </div>
+
+    <div class="half typo">
+        <div id="result" class="scrollbar"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/mimic.js"></script>
+    <script src="js/wordpress.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/markdown-it.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/reqianduan.js"></script>
+    <script src="js/edit.js"></script>
+</body>
+</html>
