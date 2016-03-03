@@ -1,6 +1,6 @@
 # 热前端文章采集工具
 
-这是一个Chrome扩展程序，可以让你方便地从任意网站上采集喜欢的文章到热前端(reqianduan.com)网站。
+这是一个Chrome扩展程序，可以让你方便地从任意网站上采集喜欢的文章到热前端([reqianduan.com])网站。
 
 ## 技术
 
@@ -16,6 +16,7 @@
 
 ## TODO
 
+- [x] 保存到本地
 - [ ] 异步请求
 - [ ] 授权功能：插件对账号密码进行规则A加密，服务器端进行反A解密。
     - 服务器端需要修改XMLRPC接口，增加解密操作。
@@ -23,7 +24,7 @@
 - [ ] 标签功能
 
 
-
+[reqianduan.com]: <http://www.reqianduan.com/>
 [html2markdown]: <https://github.com/kates/html2markdown>
 [clearly]: <https://github.com/fegeeks/clearly>
 [markdown-it]: <https://github.com/markdown-it/markdown-it>

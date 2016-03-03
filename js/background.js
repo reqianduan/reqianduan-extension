@@ -7,8 +7,8 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
     switch(msg.action) {
         case 'addPage':
-            // 存储到windows
-            windows.reqianduan = msg.data;
+            // 存储到window
+            window.background = msg;
 
             // 打开编辑页面
             chrome.tabs.create({'url' : 'edit.html'});
@@ -17,7 +17,15 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             break;
 
         case 'getMarkdownData':
-            sendResponse({ status: 'success', data: reqianduan });
+            var response = {
+                url      : background.url,
+                title    : background.data.title || background.title,
+                markdown : background.data.markdown,
+                html     : background.data.html,
+                links    : background.data.links,
+                images   : background.data.images
+            };
+            sendResponse({ status: 'success', data: response });
             break;
     }
 });
