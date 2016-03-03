@@ -22,6 +22,7 @@
     - 服务器端需要修改XMLRPC接口，增加解密操作。
 - [ ] 分类功能
 - [ ] 标签功能
+- [ ] 滚动同步
 
 
 [reqianduan.com]: <http://www.reqianduan.com/>

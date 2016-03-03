@@ -19,6 +19,9 @@ $(document).ready(function () {
             // 保存到window变量
             window.reqianduan.data = response.data;
 
+            // 初始化标题
+            $('#title').val( $.trim(response.data.title) );
+
             // 初始化左栏
             $('#source').val( response.data.markdown );
 
@@ -48,6 +51,7 @@ $(document).ready(function () {
     // 采集到热前端
     $('#btn_upload').on('click', function () {
         // 更新数据
+        reqianduan.data.title = $('#title').val();
         reqianduan.data.markdown = $('#source').val();
 
         // 发起采集
@@ -57,7 +61,7 @@ $(document).ready(function () {
     // 保存到本地
     $('#btn_save').on('click', function(e){
         var data = $('#source').val(),
-            fileName = reqianduan.data.title+'.md' || "reqianduan.md";
+            fileName = $('#title').val()+'.md' || "reqianduan.md";
         saveAsFile(data, fileName);
         e.preventDefault();
     });
