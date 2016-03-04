@@ -32,7 +32,7 @@ textarea{
     height: 100%;
     float: left;
 }
-#source, #result{
+.markdown, .result{
     height: 100%;
     overflow-y: scroll;
     padding: 0 15px;
@@ -111,7 +111,7 @@ textarea{
 }
 
 /* 标题 */
-#title{
+.title{
     width: 100%;
     margin: 6px 0;
     padding: 7px 15px;
@@ -165,7 +165,7 @@ textarea{
     border-left: 1px;
 }
 
-#btn_close {
+.btn_close {
     position: absolute;
     top: 0;
     right: 0;
@@ -173,19 +173,20 @@ textarea{
     height: 42px;
     line-height: 32px;
     font-size: 40px;
+    font-weight: 300;
     cursor: pointer;
     text-align: center;
     color: #fff;
 }
 
-#btn_close:hover {
+.btn_close:hover {
     background-color: rgba(255,255,255,.5);
 }
 
-#btn_close:hover i {
+.btn_close:hover i {
     background-position: -80px 0;
 }
 
-#btn_close:active {
+.btn_close:active {
     background-color: #000;
 }

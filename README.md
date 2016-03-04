@@ -6,16 +6,18 @@
 
 为了完成这个扩展程序，我使用了一些开源项目：
 
+* [vue.js] - Simple yet powerful library for building modern web interfaces.
 * [html2markdown] - Converts HTML to Markdown
 * [clearly] - clearly
 * [markdown-it] - Markdown parser
-* [Mimic] - XML-RPC client implemented in JavaScript
+* [mimic] - XML-RPC client implemented in JavaScript
 * [wordpress.js] - WordPress XmlRpc Javascript Api
 * [moment] - Parse, validate, manipulate, and display dates in javascript.
 * [jQuery] - duh
 
-## TODO
+## Roadmap
 
+- [ ] 提示信息
 - [x] 保存到本地
 - [ ] 异步请求
 - [ ] 授权功能：插件对账号密码进行规则A加密，服务器端进行反A解密。
@@ -26,10 +28,11 @@
 
 
 [reqianduan.com]: <http://www.reqianduan.com/>
+[vue.js]: <https://github.com/vuejs/vue/>
 [html2markdown]: <https://github.com/kates/html2markdown>
 [clearly]: <https://github.com/fegeeks/clearly>
 [markdown-it]: <https://github.com/markdown-it/markdown-it>
-[Mimic]: <http://mimic-xmlrpc.sourceforge.net/>
+[mimic]: <http://mimic-xmlrpc.sourceforge.net/>
 [wordpress.js]: <https://github.com/developerworks/wordpress-xmlrpc-javascript-api>
 [moment]: <https://github.com/moment/moment/>
 [jQuery]: <http://jquery.com>
