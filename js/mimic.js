@@ -252,17 +252,18 @@ XmlRpcRequest.prototype.send = function(callback) {
 	// XHR
 	xhr = Builder.buildXHR(this.crossDomain);
 
-  if (callback) {
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4) {
-        if (xhr.status == 200) {
-          callback(new XmlRpcResponse(xhr.responseXML).parseXML(), xhr.status);
-        } else {
-          callback(null, xhr.status);
-        }
-      }
-    };
-  }
+	if (callback) {
+	    xhr.onreadystatechange = function() {
+	      	if (xhr.readyState == 4) {
+		        if (xhr.status == 200) {
+		        	var response = new XmlRpcResponse(xhr.responseXML);
+		        	callback(response.parseXML(), xhr.status);
+		        } else {
+		        	callback(null, xhr.status);
+		        }
+	      	}
+	    };
+	}
 
 	xhr.open("POST", this.serviceUrl, !!callback);
 	// HTTP headers

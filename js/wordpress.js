@@ -120,7 +120,7 @@ WordPress.prototype.getPosts = function(blog_id, filter, fields) {
  * 
  * @returns post_id int
  */
-WordPress.prototype.newPost = function(blog_id, content) {
+WordPress.prototype.newPost = function(blog_id, content, callback) {
 
 	this.request.methodName = "wp.newPost";
 
@@ -129,9 +129,14 @@ WordPress.prototype.newPost = function(blog_id, content) {
 	this.request.addParam(this.password);
 	this.request.addParam(content);
 
-	var resp = this.request.send();
-	this.request.clearParams();
-	return resp.parseXML();
+	if (callback) {
+		this.request.send(callback);
+		this.request.clearParams();
+	} else {
+		var resp = this.request.send();
+		this.request.clearParams();
+		return resp.parseXML();
+	}
 };
 
 /**

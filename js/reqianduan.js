@@ -91,16 +91,16 @@ var reqianduan = (function(){
         console.log('addPage', JSON.stringify(postData));
 
         var wp = new WordPress(connection.url, connection.username, connection.password);
-        var reply = wp.newPost(1, postData);
-
-        if (!(reply instanceof String)) {
-            // 提交失败
-            console.error("ERROR: ", reply.faultString.toString());
-        } else {
-            // 提交成功
-            console.info(reply.toString());
-            // chrome.tabs.create( { url:reqianduan.getDomain() + '/?p=' + reply.toString() + '&preview=true' } );
-        }
+        wp.newPost(1, postData, function(reply) {
+            if (!(reply instanceof String)) {
+                // 提交失败
+                console.error("ERROR: ", reply.faultString.toString());
+            } else {
+                // 提交成功
+                console.info(reply.toString());
+                // chrome.tabs.create( { url:reqianduan.getDomain() + '/?p=' + reply.toString() + '&preview=true' } );
+            }
+        });
     }
 
     function log(label, data) {
