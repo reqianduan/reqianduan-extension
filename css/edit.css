@@ -88,7 +88,7 @@ textarea{
     padding: 7px 15px;
     font-family: sans-serif;
 }
-.btn-pin{
+.btn-upload{
     background: #D53939;
     color: #fff;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
@@ -98,7 +98,7 @@ textarea{
     outline: 1px solid #222;
     background-color: rgba(255,255,255,.05);
 }
-.btn-pin:hover{
+.btn-upload:hover{
     background-color: #E54646;
     outline: none;
 }
@@ -106,7 +106,7 @@ textarea{
     color: #fff;
     background-color: #000;
 }
-.btn-pin:active {
+.btn-upload:active {
     background-color: #C52424;
 }
 
@@ -165,7 +165,7 @@ textarea{
     border-left: 1px;
 }
 
-.btn_close {
+.btn-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -179,14 +179,17 @@ textarea{
     color: #fff;
 }
 
-.btn_close:hover {
+.btn-close:hover {
     background-color: rgba(255,255,255,.5);
 }
 
-.btn_close:hover i {
+.btn-close:hover i {
     background-position: -80px 0;
 }
 
-.btn_close:active {
+.btn-close:active {
     background-color: #000;
+}
+.disabled{
+    cursor: not-allowed;
 }

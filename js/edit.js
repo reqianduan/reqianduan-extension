@@ -5,7 +5,7 @@
  * @date   2016-03-02 14:53:03
  */
 
-Vue.config.debug = true;
+if (util.isDebug()) Vue.config.debug = true;
 
 // 初始化mdit
 var md = window.markdownit({
@@ -18,7 +18,7 @@ var md = window.markdownit({
 chrome.runtime.sendMessage({ action: 'getMarkdownData' }, function(response) {
 
     // debug
-    console.log(response);
+    util.log('[edit.js] getMarkdownData.response', response);
 
     // 数据准确
     if (response.status === 'success') {

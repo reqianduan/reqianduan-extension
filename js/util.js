@@ -24,6 +24,11 @@ var util = {
         return navigator.platform.match(/^Mac/) !== null;
     },
 
+    isDebug: function () {
+        return true;
+        // return util.getSetting('debug') !== undefined && util.getSetting('debug');
+    },
+
     // Abstract browser specific funtionality
 
     getCurrentTab: function (cb) {
@@ -268,6 +273,13 @@ var util = {
             // }
 
             safari.self.tab.dispatchMessage('message', message);
+        }
+    },
+
+    log: function (label, data) {
+        if (util.isDebug()) {
+            console.info('[reqianduan]' + label + ': \n');
+            console.log(data);
         }
     }
 };

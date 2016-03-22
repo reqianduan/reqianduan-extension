@@ -3,7 +3,7 @@
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
     // debug
-    console.log('Got a Message :\n' + JSON.stringify(msg));
+    util.log('[background.js] Got a Message', msg);
 
     switch(msg.action) {
         case 'addPage':
@@ -66,7 +66,7 @@ function handler(info, tab) {
     loadLayerIntoPage(tab, url, function () {
 
         // debug
-        console.log('loadLayerIntoPage.callback');
+        util.log('[background.js] loadLayerIntoPage callback');
 
     });
 }

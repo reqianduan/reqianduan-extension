@@ -20,13 +20,8 @@ var reqianduan = (function(){
         return true;
     }
 
-    function isDebug() {
-    	return true;
-        // return util.getSetting('debug') !== undefined && util.getSetting('debug');
-    }
-
     function getDomain() {
-        return isDebug() ? domainDebug : domain;
+        return util.isDebug() ? domainDebug : domain;
     }
 
     function htmlEscape(str) {
@@ -65,8 +60,9 @@ var reqianduan = (function(){
             }
         ];
 
-        var tags = {
-            post_tag: []
+        var terms_names = {
+            category: ['JavaScript'], // 分类名称（非别名）
+            post_tag: [] // 标签名称（非别名）
         };
 
         var postData = {
@@ -82,39 +78,29 @@ var reqianduan = (function(){
             // ping_status: '',
             // sticky: 0,
             custom_fields: custom_fields,
-            // terms: categories,
-            // terms_names: tags
+            // terms: terms,
+            terms_names: terms_names
         };
 
-        console.log('data', data);
-        console.log('connection', JSON.stringify(connection));
-        console.log('addPage', JSON.stringify(postData));
+        console.log(postData);
 
         var wp = new WordPress(connection.url, connection.username, connection.password);
         wp.newPost(1, postData, function(reply) {
             if (!(reply instanceof String)) {
-                // 提交失败
-                console.error("ERROR: ", reply.faultString.toString());
+                // error
+                notice.error('采集失败，错误' + reply.faultCode.toString() + ': ' + reply.faultString.toString());
             } else {
-                // 提交成功
-                console.info(reply.toString());
+                // success
+                notice.success('采集成功，文章ID: ' + reply.toString());
                 // chrome.tabs.create( { url:reqianduan.getDomain() + '/?p=' + reply.toString() + '&preview=true' } );
             }
         });
     }
 
-    function log(label, data) {
-        if (isDebug()) {
-            console.log('reqianduan.' + label + ': ' + JSON.stringify(data));
-        }
-    }
-
     return {
         addPage: addPage,
         isAuthenticated: isAuthenticated,
-        isDebug: isDebug,
         getDomain: getDomain,
-        log: log,
         version: version
     };
 

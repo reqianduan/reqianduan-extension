@@ -4,28 +4,27 @@
     <title>将文章采集到热前端</title>
     <link rel="stylesheet" href="css/typo.min.css">
     <link rel="stylesheet" href="css/edit.css">
+    <link rel="stylesheet" href="css/notice.css">
     <script src="js/vue.min.js"></script>
 </head>
 <body id="app">
     <header class="header">
-        <input type="text" class="title" value="{{ title }}" v-model="title">
+        <input type="text" class="title" value="{{ title }}" v-model="title" placeholder="文章标题">
         <div class="toolbar">
             <ul>
-                <li class="btn_save separate" v-on:click="save">
-                    <div class="btn btn-save">
-                        <i></i>
+                <li class="separate">
+                    <div class="btn btn-save" v-on:click="save">
                         保存到本地
                     </div>
                 </li>
-                <li class="btn_upload separate" v-on:click="upload">
-                    <div class="btn btn-pin">
-                        <i></i>
+                <li class="separate">
+                    <div class="btn btn-upload" v-on:click="upload">
                         采集到热前端
                     </div>
                 </li>
             </ul>
         </div>
-        <a class="btn_close" v-on:click="close">×</a>
+        <a class="btn-close" v-on:click="close">×</a>
         <div class="clearfix"></div>
     </header>
 
@@ -37,6 +36,7 @@
         <div class="result scrollbar">{{{ result }}}</div>
     </div>
 
+    <script src="js/notice.js"></script>
     <script src="js/mimic.js"></script>
     <script src="js/wordpress.js"></script>
     <script src="js/moment.min.js"></script>
